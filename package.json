@@ -1,0 +1,20 @@
+{
+  "name": "falcor-hr-induction",
+  "version": "1.0.0",
+  "description": "Falcor HR Induction Presentation & Broadcast Video Suite",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx serve -l 8000 .",
+    "test": "python test_rolling_narration.py",
+    "render": "python render_master_video.py"
+  },
+  "keywords": [
+    "presentation",
+    "teleprompter",
+    "broadcast",
+    "subtitles",
+    "multilingual"
+  ],
+  "author": "Falcor Engineering",
+  "license": "UNLICENSED"
+}
