@@ -110,7 +110,7 @@
     {
       "start": 16.65,
       "end": 30.77,
-      "en": "Our headquarters is located at Level 52, Addax Tower, Al Reem Island, phone zero two, six three four, two five five five, supported by our central workshop facility in Mussafah Industrial Area.",
+      "en": "Our headquarters is located at Level 52, Addax Tower, Al Reem Island, Phone: +971 2 634 2555, supported by our central workshop facility in Mussafah Industrial Area.",
       "ar": "يقع مقرنا الرئيسي في الطابق 52 ببرج أدكس في جزيرة الريم، هاتف 026342555، مدعوماً بورشة العمل المركزية في مصفح الصناعية.",
       "hi": "हमारा मुख्यालय लेवल 52, एडैक्स टॉवर, अल रीम द्वीप पर स्थित है (फोन: 02 634 2555), जिसे मुसफ्फा में हमारी केंद्रीय कार्यशाला का सहयोग प्राप्त है।",
       "ta": "எங்கள் தலைமை அலுவலகம் லெவல் 52, அடாக்ஸ் டவர், அல் ரீம் தீவில் அமைந்துள்ளது (தொலைபேசி: 02 634 2555), மற்றும் முஸஃப்பாவில் மத்திய பட்டறை இயங்குகிறது.",
@@ -264,7 +264,7 @@
     {
       "start": 0.1,
       "end": 10.81,
-      "en": "In an emergency, dial nine nine seven for Fire, nine nine eight for Ambulance, and nine nine nine for Police, then notify your HSE Officer immediately.",
+      "en": "In an emergency, dial 997 for Fire, 998 for Ambulance, and 999 for Police, then notify your HSE Officer immediately.",
       "ar": "في حالات الطوارئ، اتصل بالرقم 997 للإطفاء، و998 للإسعاف، و999 للشرطة، ثم أبلغ مسؤول السلامة فوراً.",
       "hi": "आपात स्थिति में, अग्निशमन के लिए 997, एम्बुलेंस के लिए 998 और पुलिस के लिए 999 डायल करें, फिर तुरंत सुरक्षा अधिकारी को सूचित करें।",
       "ta": "அவசரகாலத்தில், தீயணைப்புக்கு 997, ஆம்புலன்ஸுக்கு 998 மற்றும் காவல்துறைக்கு 999 ஐ டயல் செய்யவும்; பின்னர் உடனே பாதுகாப்பு அதிகாரியிடம் தெரிவிக்கவும்.",
@@ -673,7 +673,7 @@
     {
       "start": 14.47,
       "end": 25.35,
-      "en": "For contracts, benefits, and support, contact HR at h r at falkor dash eng dot com or call zero two, six three four, two five five five.",
+      "en": "For contracts, benefits, and support, contact HR at hr@falcor-eng.com or call +971 2 634 2555.",
       "ar": "للعقود والرواتب والاستفسارات، تواصل مع الموارد البشرية على hr@falcor-eng.com أو اتصل على 026342555.",
       "hi": "अनुबंधों, लाभों और सहायता के लिए hr@falcor-eng.com पर या 02 634 2555 पर संपर्क करें।",
       "ta": "ஒப்பந்தங்கள், சலுகைகள் மற்றும் ஆதரவிற்கு hr@falcor-eng.com அல்லது 02 634 2555 என்ற எண்ணில் தொடர்பு கொள்ளவும்.",
@@ -711,76 +711,44 @@
   ]
 };
 
-  // Pre-calculated audio durations (seconds)
-  const DURATIONS = {
-  "1": 15.26,
-  "2": 23.5,
-  "3": 24.29,
-  "4": 30.84,
-  "5": 23.16,
-  "6": 20.83,
-  "7": 20.83,
-  "8": 22.27,
-  "9": 23.62,
-  "10": 21.26,
-  "11": 21.17,
-  "12": 22.27,
-  "13": 22.13,
-  "14": 18.86,
-  "15": 21.36,
-  "16": 22.01,
-  "17": 21.84,
-  "18": 23.47,
-  "19": 22.06,
-  "20": 25.42,
-  "21": 19.85
-};
-
-  // Master Audio Element (Jenny Voiceover Engine)
   const audio = new Audio();
-  audio.preload = 'auto';
-
-  // DOM Cache
-  const subConsole = document.getElementById('broadcast-console');
-  const subSpokenEn = document.getElementById('sub-spoken-en');
-  const narrationTrack = document.getElementById('narration-track');
-  const subTimecode = document.getElementById('sub-timecode');
-  const focusedTransWrap = document.getElementById('focused-trans-wrap');
-  const focusedTransViewport = document.getElementById('focused-trans-viewport');
-  const focusedTransTrack = document.getElementById('focused-trans-track');
-  const focusedTransTag = document.getElementById('focused-trans-tag');
-  const focusedTransText = document.getElementById('focused-trans-text');
-  const allLangsGrid = document.getElementById('all-langs-grid');
-  const subLangAr = document.getElementById('sub-lang-ar');
-  const subLangHi = document.getElementById('sub-lang-hi');
-  const subLangTa = document.getElementById('sub-lang-ta');
-  const subLangMl = document.getElementById('sub-lang-ml');
-  const btnPlayPause = document.getElementById('btn-play-pause');
-  const btnPrev = document.getElementById('btn-prev');
-  const btnNext = document.getElementById('btn-next');
-  const btnMute = document.getElementById('btn-mute');
-  const btnSpeed = document.getElementById('btn-speed');
-  const scrubberWrap = document.getElementById('scrubber-wrap');
-  const scrubberFill = document.getElementById('scrubber-fill');
-  const scrubberHandle = document.getElementById('scrubber-handle');
-  const slideCounter = document.getElementById('slide-counter');
-  const langTabs = document.querySelectorAll('.lang-tab');
-
-  let selectedLang = 'ar'; // Default focused translation: Arabic
-  let currentCueObj = null;
-  let currentSlideWords = [];
-  let currentSlideCues = [];
-
-  // Playback speeds
+  const DURATIONS = {
+    "1": 15.26, "2": 23.50, "3": 24.29, "4": 30.84, "5": 23.16, "6": 20.83,
+    "7": 20.83, "8": 22.27, "9": 23.62, "10": 21.26, "11": 21.17, "12": 22.27,
+    "13": 22.13, "14": 18.86, "15": 21.36, "16": 22.01, "17": 21.84, "18": 23.47,
+    "19": 22.06, "20": 25.42, "21": 19.85
+  };
   const SPEEDS = [1.0, 1.25, 1.5];
   let speedIdx = 0;
 
-  const LANG_NAMES = {
-    'ar': 'ARABIC (العربية)',
-    'hi': 'HINDI (हिंदी)',
-    'ta': 'TAMIL (தமிழ்)',
-    'ml': 'MALAYALAM (മലയാളം)'
-  };
+  const scrubberWrap = document.getElementById('scrubber-wrap');
+  const scrubberFill = document.getElementById('scrubber-fill');
+  const scrubberHandle = document.getElementById('scrubber-handle');
+  const subTimecode = document.getElementById('sub-timecode');
+  const btnPlayPause = document.getElementById('btn-play-pause');
+  const iconPlay = document.querySelector('.icon-play');
+  const iconPause = document.querySelector('.icon-pause');
+  const btnPrev = document.getElementById('btn-prev');
+  const btnNext = document.getElementById('btn-next');
+  const btnMute = document.getElementById('btn-mute');
+  const iconVolOn = document.querySelector('.icon-vol-on');
+  const iconVolMute = document.querySelector('.icon-vol-mute');
+  const btnSpeed = document.getElementById('btn-speed');
+  const slideCounter = document.getElementById('slide-counter');
+  const subConsole = document.getElementById('architectural-blade');
+  const narrationTrack = document.getElementById('narration-track');
+  const focusedTransText = document.getElementById('focused-trans-text');
+  const focusedTransWrap = document.getElementById('focused-trans-wrap');
+  const focusedTransTag = document.getElementById('focused-trans-tag');
+  const subSpokenEn = document.getElementById('sub-spoken-en');
+  const allLangsGrid = document.getElementById('all-langs-grid');
+  const subLangAr = document.getElementById('blade-text-ar');
+  const subLangHi = document.getElementById('blade-text-hi');
+  const subLangTa = document.getElementById('blade-text-ta');
+  const subLangMl = document.getElementById('blade-text-ml');
+  let selectedLang = 'ar';
+  let currentSlideWords = [];
+  let currentCueObj = null;
 
   function formatTime(seconds) {
     const s = Math.max(0, Math.floor(seconds || 0));
@@ -868,8 +836,10 @@
       if (subLangMl) subLangMl.textContent = currentCueObj.ml || "";
 
       updateRollingNarration(0);
+      initLiveBlade(slideNum);
     } else {
       clearSubtitles();
+      initLiveBlade(slideNum);
     }
 
     const totalDur = DURATIONS[String(slideNum)] || 20;
@@ -933,6 +903,56 @@
         }
       }
     }
+  }
+
+  
+  function updateLiveBlade(curTime) {
+    const cues = TRANSLATIONS[String(currentSlide)] || [];
+    if (cues.length === 0) return;
+
+    let newCueIdx = 0;
+    for (let i = 0; i < cues.length; i++) {
+      if (curTime >= cues[i].start) {
+        newCueIdx = i;
+      }
+    }
+
+    if (newCueIdx !== activeCueIndex) {
+      activeCueIndex = newCueIdx;
+      const cue = cues[activeCueIndex];
+      if (!cue) return;
+
+      const elAr = document.getElementById('blade-text-ar');
+      const elHi = document.getElementById('blade-text-hi');
+      const elTa = document.getElementById('blade-text-ta');
+      const elMl = document.getElementById('blade-text-ml');
+
+      [elAr, elHi, elTa, elMl].forEach(el => { if (el) el.classList.add('updating'); });
+
+      setTimeout(() => {
+        if (elAr) elAr.textContent = cue.ar || '';
+        if (elHi) elHi.textContent = cue.hi || '';
+        if (elTa) elTa.textContent = cue.ta || '';
+        if (elMl) elMl.textContent = cue.ml || '';
+        [elAr, elHi, elTa, elMl].forEach(el => { if (el) el.classList.remove('updating'); });
+      }, 100);
+    }
+  }
+
+  function initLiveBlade(slideNum) {
+    const cues = TRANSLATIONS[String(slideNum)] || [];
+    const cue = cues[0] || {};
+    activeCueIndex = 0;
+
+    const elAr = document.getElementById('blade-text-ar');
+    const elHi = document.getElementById('blade-text-hi');
+    const elTa = document.getElementById('blade-text-ta');
+    const elMl = document.getElementById('blade-text-ml');
+
+    if (elAr) elAr.textContent = cue.ar || '';
+    if (elHi) elHi.textContent = cue.hi || '';
+    if (elTa) elTa.textContent = cue.ta || '';
+    if (elMl) elMl.textContent = cue.ml || '';
   }
 
   function updateRollingNarration(curTime) {
@@ -1030,6 +1050,7 @@
 
         // Live Continuous Rolling Narration & Karaoke
         updateRollingNarration(curTime);
+        updateLiveBlade(curTime);
 
         animFrameId = requestAnimationFrame(tick);
       }
@@ -1109,6 +1130,7 @@
       subTimecode.textContent = `${formatTime(curTime)} / ${formatTime(totalDur)}`;
     }
     updateRollingNarration(curTime);
+        updateLiveBlade(curTime);
   }
 
   function nextSlide() {
@@ -1124,14 +1146,17 @@
   }
 
   // Language tab switching
-  langTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      langTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      selectedLang = tab.getAttribute('data-lang');
-      updateFocusedTranslation();
+  const langTabs = document.querySelectorAll('.lang-tab');
+  if (langTabs && langTabs.length > 0) {
+    langTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        langTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        selectedLang = tab.getAttribute('data-lang');
+        if (typeof updateFocusedTranslation === 'function') updateFocusedTranslation();
+      });
     });
-  });
+  }
 
   // Audio Event Listeners
   audio.addEventListener('ended', () => {
@@ -1200,6 +1225,8 @@
 
   // Global API exposed for automation & Playwright
   window.showSlide = showSlide;
+  window.updateLiveBlade = updateLiveBlade;
+  window.initLiveBlade = initLiveBlade;
   window.nextSlide = nextSlide;
   window.prevSlide = prevSlide;
   window.togglePlayPause = togglePlayPause;
