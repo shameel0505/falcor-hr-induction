@@ -27,3 +27,7 @@ test_audio*
 test_synced*
 test_speed*
 scratch_*.py
+
+
+*.bundle
+*.zip

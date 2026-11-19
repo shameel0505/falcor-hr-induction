@@ -163,3 +163,4 @@ python test_rolling_narration.py
 | `audio/` | ~7 MB | 21 high-definition MP3 neural voiceover files |
 | `frames/` | ~7 MB | 21 high-resolution slide visual frames |
 | `clips/` | ~29 MB | 21 rendered 1080p individual slide MP4 video clips |
+
