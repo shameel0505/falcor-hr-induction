@@ -94,11 +94,12 @@ body, html {
 }
 
 .section-breadcrumb {
-  font-size: 12px !important;
+  font-size: 13.5px !important;
   font-weight: 800 !important;
-  letter-spacing: 1.8px !important;
+  letter-spacing: 2px !important;
   color: #13788A !important;
   text-transform: uppercase !important;
+  margin-bottom: 4px !important;
 }
 
 .slide-21 .section-breadcrumb {
@@ -106,12 +107,12 @@ body, html {
 }
 
 .slide-title {
-  font-size: 32px !important;
+  font-size: 40px !important;
   font-weight: 900 !important;
   color: #033A49 !important;
   margin: 0 !important;
-  letter-spacing: -0.4px !important;
-  line-height: 1.15 !important;
+  letter-spacing: -0.5px !important;
+  line-height: 1.12 !important;
 }
 
 .slide-21 .slide-title {
@@ -130,7 +131,8 @@ body, html {
   display: flex !important;
   flex-direction: column !important;
   justify-content: flex-start !important;
-  gap: 14px !important;
+  gap: 20px !important;
+  justify-content: space-between !important;
   min-height: 0 !important;
 }
 
@@ -138,22 +140,25 @@ body, html {
 .grid-2 {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
-  gap: 20px !important;
-  flex: 0 1 auto !important;
+  gap: 22px !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
 }
 
 .grid-3 {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
-  gap: 20px !important;
-  flex: 0 1 auto !important;
+  gap: 22px !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
 }
 
 .grid-4 {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 16px !important;
-  flex: 0 1 auto !important;
+  gap: 18px !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
 }
 
 .grid-5 {
@@ -176,11 +181,12 @@ body, html {
   background: #FFFFFF !important;
   border: 1px solid rgba(19, 120, 138, 0.22) !important;
   border-radius: 12px !important;
-  padding: 18px 20px !important;
-  box-shadow: 0 4px 14px rgba(3, 58, 73, 0.04) !important;
+  padding: 22px 26px !important;
+  box-shadow: 0 4px 16px rgba(3, 58, 73, 0.06) !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 10px !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
   position: relative !important;
 }
 
@@ -209,9 +215,9 @@ body, html {
 }
 
 .card-icon-badge {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 10px !important;
   background: #E8F4F7;
   border: 1px solid rgba(19, 120, 138, 0.32);
   color: #0E5D75;
@@ -243,22 +249,22 @@ body, html {
 }
 
 .card-icon-badge svg {
-  width: 18px;
-  height: 18px;
+  width: 22px !important;
+  height: 22px !important;
   fill: currentColor;
 }
 
 .card-title-text {
-  font-size: 17px !important;
-  font-weight: 800 !important;
+  font-size: 22px !important;
+  font-weight: 900 !important;
   color: #033A49 !important;
-  line-height: 1.2 !important;
-  letter-spacing: -0.2px !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.3px !important;
 }
 
 .card-body-text {
-  font-size: 14px !important;
-  line-height: 1.55 !important;
+  font-size: 17px !important;
+  line-height: 1.58 !important;
   color: #334155 !important;
 }
 
@@ -269,14 +275,15 @@ body, html {
   margin: 0 !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 6px !important;
+  gap: 10px !important;
+  flex-grow: 1 !important;
 }
 
 .rich-bullets li {
-  font-size: 13.5px !important;
-  line-height: 1.45 !important;
+  font-size: 16.5px !important;
+  line-height: 1.55 !important;
   color: #2D4A53 !important;
-  padding-left: 18px !important;
+  padding-left: 24px !important;
   position: relative !important;
 }
 
