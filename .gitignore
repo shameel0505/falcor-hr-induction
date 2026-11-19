@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Playwright / Browsers
+.playwright/
+test-results/
+
+# OS / Editor Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Temporary test scratch outputs
+test_*.png
+test_slide12*
+test_audio*
+test_synced*
+test_speed*
+scratch_*.py

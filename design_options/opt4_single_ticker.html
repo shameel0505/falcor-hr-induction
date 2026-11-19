@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, height=1080, initial-scale=1.0">
+  <title>Falcor HR Orientation - Design Option 4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Noto+Sans+Arabic:wght@600;700&family=Noto+Sans+Devanagari:wght@600;700&family=Noto+Sans+Tamil:wght@600;700&family=Noto+Sans+Malayalam:wght@600;700&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1920px; height: 1080px; overflow: hidden; background: #FFFFFF;
+      font-family: 'Lato', -apple-system, sans-serif; color: #1F2A30;
+      -webkit-font-smoothing: antialiased;
+    }
+    .presentation-canvas {
+      width: 1920px; height: 1080px; position: relative; background: #FFFFFF;
+      padding: 38px 60px 20px 60px; display: flex; flex-direction: column;
+    }
+    .slide-header {
+      display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px;
+    }
+    .section-breadcrumb {
+      font-size: 13.5px; font-weight: 700; letter-spacing: 1.5px; color: #13788A;
+      text-transform: uppercase; margin-bottom: 6px;
+    }
+    .slide-title {
+      font-size: 38px; font-weight: 900; color: #033A49; letter-spacing: -0.5px; line-height: 1.15;
+    }
+    .top-logo { height: 46px; object-fit: contain; margin-top: 2px; }
+    
+    .timeline-block { position: relative; margin-bottom: 26px; padding: 8px 40px; }
+    .timeline-track-bg {
+      position: absolute; top: 23px; left: 60px; right: 60px; height: 6px; border-radius: 3px; display: flex; z-index: 1;
+    }
+    .track-standard { width: 58%; background-color: #13788A; height: 100%; border-radius: 3px 0 0 3px; }
+    .track-extension { width: 42%; background-color: #FA880B; height: 100%; border-radius: 0 3px 3px 0; }
+    .milestones-row { position: relative; z-index: 2; display: flex; justify-content: space-between; }
+    .milestone-item { display: flex; flex-direction: column; width: 330px; }
+    .milestone-item.m1 { align-items: flex-start; text-align: left; }
+    .milestone-item.m2 { align-items: center; text-align: center; }
+    .milestone-item.m3 { align-items: flex-end; text-align: right; }
+    .milestone-ring {
+      width: 30px; height: 30px; border-radius: 50%; background: #FFFFFF; border: 4px solid #13788A;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 10px;
+    }
+    .milestone-core { width: 10px; height: 10px; border-radius: 50%; background: #13788A; }
+    .orange-ring { border-color: #FA880B; }
+    .orange-core { background: #FA880B; }
+    .milestone-label { font-size: 18px; font-weight: 700; color: #033A49; margin-bottom: 4px; }
+    .orange-label { color: #FA880B; }
+    .milestone-desc { font-size: 14px; color: #6B6F72; line-height: 1.35; max-width: 280px; }
+
+    .cards-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 14px; }
+    .info-card {
+      background-color: #EEF5F6; border: 1px solid rgba(19, 120, 138, 0.18); border-radius: 12px;
+      padding: 22px 24px; display: flex; flex-direction: column; min-height: 255px;
+    }
+    .card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .card-icon { width: 36px; height: 36px; object-fit: contain; }
+    .card-heading { font-size: 19px; font-weight: 700; color: #033A49; }
+    .card-body { font-size: 14px; line-height: 1.58; color: #1F2A30; flex-grow: 1; margin-bottom: 14px; }
+    .card-body strong { color: #033A49; font-weight: 700; }
+    .card-tag {
+      align-self: flex-start; font-size: 11.5px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 6px; background: #E0EFF2; color: #0E5D75;
+    }
+    .card-tag.teal { background: #D7EFF2; color: #13788A; }
+
+    .slide-number { position: absolute; bottom: 236px; right: 60px; font-size: 13.5px; font-weight: 700; color: #6B6F72; }
+    
+    /* Option-Specific CSS */
+    
+.single-ticker-bar {
+  position: absolute; bottom: 44px; left: 60px; right: 60px; height: 40px;
+  background: #032530; border-radius: 6px; display: flex; align-items: center; padding: 0 16px; gap: 16px;
+  box-shadow: 0 6px 18px rgba(3, 37, 48, 0.2);
+}
+.live-badge {
+  display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 900; letter-spacing: 1.2px;
+  color: #38BDF8; text-transform: uppercase; flex-shrink: 0; border-right: 1px solid rgba(56, 189, 248, 0.3);
+  padding-right: 14px;
+}
+.pulsing-indicator { width: 8px; height: 8px; border-radius: 50%; background: #38BDF8; box-shadow: 0 0 8px #38BDF8; }
+.ticker-stream {
+  flex-grow: 1; font-size: 16px; font-weight: 600; color: #FFFFFF; white-space: nowrap; overflow: hidden;
+  font-family: 'Noto Sans Arabic', 'Lato', sans-serif;
+}
+.ticker-cycle-note {
+  font-size: 11px; font-weight: 700; color: #94A3B8; letter-spacing: 0.5px; flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.08); padding: 3px 10px; border-radius: 4px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="presentation-canvas">
+    <header class="slide-header">
+      <div class="header-left">
+        <div class="section-breadcrumb">YOUR EMPLOYMENT · PROBATION</div>
+        <h1 class="slide-title">Probation and your first months</h1>
+      </div>
+      <div class="header-right">
+        <img src="../falcor_logo_color.png" alt="Falcor" class="top-logo">
+      </div>
+    </header>
+
+    <main class="slide-content">
+      <div class="timeline-block">
+        <div class="timeline-track-bg"><div class="track-standard"></div><div class="track-extension"></div></div>
+        <div class="milestones-row">
+          <div class="milestone-item m1">
+            <div class="milestone-ring"><div class="milestone-core"></div></div>
+            <div class="milestone-label">Day 1</div>
+            <div class="milestone-desc">Probation starts for all new hires and re-hires</div>
+          </div>
+          <div class="milestone-item m2">
+            <div class="milestone-ring"><div class="milestone-core"></div></div>
+            <div class="milestone-label">1 – 3 months</div>
+            <div class="milestone-desc">Standard probation, as stated in your contract</div>
+          </div>
+          <div class="milestone-item m3">
+            <div class="milestone-ring orange-ring"><div class="milestone-core orange-core"></div></div>
+            <div class="milestone-label orange-label">Up to 6 months</div>
+            <div class="milestone-desc">Maximum total, if extended</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-row">
+        <div class="info-card">
+          <div class="card-top">
+            <img src="../assets/image58.png" alt="Ending icon" class="card-icon">
+            <h2 class="card-heading">Ending during probation</h2>
+          </div>
+          <p class="card-body">Either party may end employment during probation subject to contract notice. Falcor provides at least <strong>14 days' written notice</strong>; discussed in a formal review meeting and confirmed in writing.</p>
+          <div class="card-tag">14 Days Written Notice</div>
+        </div>
+        <div class="info-card">
+          <div class="card-top">
+            <img src="../assets/image59.png" alt="Extensions icon" class="card-icon">
+            <h2 class="card-heading">Extensions & unpaid leave</h2>
+          </div>
+          <p class="card-body">Probation may be extended to a maximum total of <strong>six months</strong>, with Line Manager and HOD approval, confirmed in writing at least 2 weeks prior. Up to <strong>five days'</strong> approved unpaid leave extends probation accordingly.</p>
+          <div class="card-tag">HOD Approval Required</div>
+        </div>
+        <div class="info-card">
+          <div class="card-top">
+            <img src="../assets/image60.png" alt="First weeks icon" class="card-icon">
+            <h2 class="card-heading">Your first weeks</h2>
+          </div>
+          <p class="card-body"><strong>Day 1:</strong> HR orientation and HSE induction. <strong>Weeks 1–4:</strong> agree SMART objectives with your Line Manager. <strong>End of probation:</strong> review meeting, outcome in writing; pro-rated leave and loans unlock.</p>
+          <div class="card-tag teal">SMART Objectives & Induction</div>
+        </div>
+      </div>
+    </main>
+
+    <div class="slide-number">12 / 21</div>
+
+    <!-- Subtitle Container Injection -->
+    
+<div class="single-ticker-bar">
+  <div class="live-badge">
+    <span class="pulsing-indicator"></span>
+    <span>ARABIC · العربية</span>
+  </div>
+  <div class="ticker-stream" dir="rtl">
+    تبدأ فترة التجربة من اليوم الأول (1 إلى 3 أشهر)، وتصل إلى 6 أشهر كحد أقصى ✦ فترة الإشعار 14 يوماً كتابياً ✦ التثبيت يخضع للأداء المرضي
+  </div>
+  <div class="ticker-cycle-note">Cycles AR ➔ HI ➔ TA ➔ ML every 6s</div>
+</div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Falcor HR Orientation - Slide 1 Broadcast Ticker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Noto+Sans+Arabic:wght@500;700&family=Noto+Sans+Devanagari:wght@500;700&family=Noto+Sans+Tamil:wght@500;700&family=Noto+Sans+Malayalam:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="enrichment.css">
+  <style>
+    .slide-1 {
+      display: block !important;
+      position: absolute;
+      top: 0; left: 0; width: 1920px; height: 1080px;
+    }
+    .slide-1 .architectural-blade {
+      display: none !important;
+    }
+    .broadcast-ticker-console {
+  position: absolute;
+  bottom: 16px;
+  left: 60px;
+  right: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 100;
+}
+
+.ticker-lane {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  background: #071F29;
+  border: 1px solid rgba(19, 120, 138, 0.45);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(3, 58, 73, 0.2);
+}
+
+.lane-header {
+  width: 175px;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #03151D;
+  color: #38BDF8;
+  font-size: 12.5px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-right: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.lane-marquee-wrapper {
+  flex-grow: 1;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.marquee-text {
+  padding-right: 60px;
+  color: #FFFFFF;
+  font-size: 16.5px;
+  font-weight: 600;
+  line-height: 38px;
+  display: inline-block;
+  letter-spacing: 0.2px;
+}
+
+/* Specific Script Typography & Continuous Marquee Animations */
+.lane-arabic .marquee-text {
+  font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+  font-size: 17.5px;
+  font-weight: 700;
+  padding-left: 60px;
+  padding-right: 0;
+}
+
+.lane-hindi .marquee-text {
+  font-family: 'Noto Sans Devanagari', 'Nirmala UI', sans-serif;
+  font-size: 16.5px;
+  font-weight: 600;
+}
+
+.lane-tamil .marquee-text {
+  font-family: 'Noto Sans Tamil', 'Nirmala UI', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.lane-malayalam .marquee-text {
+  font-family: 'Noto Sans Malayalam', 'Nirmala UI', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Marquee Scrolling Animations (Calm, Readable News Ticker Crawl) */
+.ltr-crawl {
+  animation: scroll-left 54s linear infinite;
+}
+
+.rtl-crawl {
+  animation: scroll-right 54s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(50%);
+  }
+}
+  </style>
+</head>
+<body style="margin:0; padding:0; background:#0B0F19; overflow:hidden;">
+  <div id="presentation-viewport" style="width:1920px; height:1080px; position:relative; overflow:hidden; background:#FFFFFF;">
+    <div class="slide slide-1" id="slide-1" data-duration="15.26">
+  <div class="presentation-canvas hero-canvas">
+    <header class="slide-header">
+      <div class="header-left">
+        <div class="section-breadcrumb">NEW HIRE ORIENTATION</div>
+        <h1 class="slide-title">Welcome to Falcor</h1>
+      </div>
+      <div class="header-right">
+        <img src="falcor_logo_color.png" alt="Falcor" class="top-logo">
+      </div>
+    </header>
+
+    <main class="slide-content s1-content">
+      <div class="hero-welcome-box">
+        <div class="hero-tag">OUR STORY · WHAT WE DO · THE PEOPLE WHO LEAD US</div>
+        <h2 class="hero-heading">Welcome to your new journey with the UAE's trusted energy partner.</h2>
+        <p class="hero-lead">Who we are, how we work, and the HR policies that support and protect you from your very first day.</p>
+        
+        <div class="hero-features-grid">
+          <div class="feat-card">
+            <div class="feat-num">01</div>
+            <div class="feat-title">Our Heritage & Leaders</div>
+            <div class="feat-desc">Established in Abu Dhabi in 1979 serving national energy clients</div>
+          </div>
+          <div class="feat-card">
+            <div class="feat-num">02</div>
+            <div class="feat-title">How We Work & Safety</div>
+            <div class="feat-desc">Professional dress, workplace standards & HSE protocols</div>
+          </div>
+          <div class="feat-card">
+            <div class="feat-num">03</div>
+            <div class="feat-title">Your Employment Rights</div>
+            <div class="feat-desc">Probation, leave, benefits, performance & employee welfare</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="slide-number">01 / 21</div>
+    
+    <div class="architectural-blade">
+      <div class="blade-row ar">
+        <div class="blade-gutter">ARABIC</div>
+        <div class="blade-divider"></div>
+        <div class="blade-text" dir="rtl">مرحباً بكم في فالكور. يسعدنا انضمامكم إلى فريقنا في هذا الدليل التوجيهي الشامل لسياساتنا وثقافتنا المؤسسية.</div>
+      </div>
+      <div class="blade-row hi">
+        <div class="blade-gutter">HINDI</div>
+        <div class="blade-divider"></div>
+        <div class="blade-text">फाल्कॉर में आपका स्वागत है। हमारी टीम में आपका स्वागत करते हुए हमें बेहद खुशी है। यह सत्र हमारी नीतियों की मार्गदर्शिका है।</div>
+      </div>
+      <div class="blade-row ta">
+        <div class="blade-gutter">TAMIL</div>
+        <div class="blade-divider"></div>
+        <div class="blade-text">ஃபால்கோரில் உங்களை வரவேற்கிறோம். எங்கள் நிறுவனக் கொள்கைகள் மற்றும் கலாச்சார வழிகாட்டிக்கு உங்களை அன்புடன் வரவேற்கிறோம்.</div>
+      </div>
+      <div class="blade-row ml">
+        <div class="blade-gutter">MALAYALAM</div>
+        <div class="blade-divider"></div>
+        <div class="blade-text">ഫാൽക്കോറിലേക്ക് സ്വാഗതം. ഞങ്ങളുടെ കമ്പനി നയങ്ങളും തൊഴിൽ സംസ്കാരവും വിശദീകരിക്കുന്ന ഈ ഓറിയന്റേഷനിലേക്ക് ഏവർക്കും സ്വാഗതം.</div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+    
+    <!-- 4 Neat, Separate Moving Subtitle Lanes (Rolling News Ticker - test_slide12_v2 Standard) -->
+    <div class="broadcast-ticker-console">
+      <!-- Lane 1: Arabic -->
+      <div class="ticker-lane lane-arabic">
+        <div class="lane-header">ARABIC · العربية</div>
+        <div class="lane-marquee-wrapper" dir="rtl">
+          <div class="marquee-track rtl-crawl">
+            <span class="marquee-text">مرحباً بكم في فالكور. يسعدنا انضمامكم إلى فريقنا في هذا الدليل التوجيهي الشامل لتاريخنا وقيادتنا وسياسات الموارد البشرية التي تدعمكم وتحميكم من يومكم الأول. ✦ </span>
+            <span class="marquee-text">مرحباً بكم في فالكور. يسعدنا انضمامكم إلى فريقنا في هذا الدليل التوجيهي الشامل لتاريخنا وقيادتنا وسياسات الموارد البشرية التي تدعمكم وتحميكم من يومكم الأول. ✦ </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lane 2: Hindi -->
+      <div class="ticker-lane lane-hindi">
+        <div class="lane-header">HINDI · हिन्दी</div>
+        <div class="lane-marquee-wrapper">
+          <div class="marquee-track ltr-crawl">
+            <span class="marquee-text">फाल्कॉर में आपका स्वागत है। हमारी टीम में आपका स्वागत करते हुए हमें बेहद खुशी है। यह अभिविन्यास हमारे इतिहास, नेतृत्व और उन नीतियों का एक अनिवार्य मार्गदर्शक है जो पहले दिन से आपकी रक्षा करती हैं। ✦ </span>
+            <span class="marquee-text">फाल्कॉर में आपका स्वागत है। हमारी टीम में आपका स्वागत करते हुए हमें बेहद खुशी है। यह अभिविन्यास हमारे इतिहास, नेतृत्व और उन नीतियों का एक अनिवार्य मार्गदर्शक है जो पहले दिन से आपकी रक्षा करती हैं। ✦ </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lane 3: Tamil -->
+      <div class="ticker-lane lane-tamil">
+        <div class="lane-header">TAMIL · தமிழ்</div>
+        <div class="lane-marquee-wrapper">
+          <div class="marquee-track ltr-crawl">
+            <span class="marquee-text">ஃபால்கோரில் உங்களை வரவேற்கிறோம். எங்கள் அணியில் நீங்கள் இணைந்ததில் நாங்கள் மகிழ்ச்சியடைகிறோம். இந்த அறிமுகம் நமது வரலாறு, தலைமை மற்றும் முதல் நாளிலிருந்தே உங்களைப் பாதுகாக்கும் மனிதவளக் கொள்கைகளுக்கான வழிகாட்டியை வழங்குகிறது. ✦ </span>
+            <span class="marquee-text">ஃபால்கோரில் உங்களை வரவேற்கிறோம். எங்கள் அணியில் நீங்கள் இணைந்ததில் நாங்கள் மகிழ்ச்சியடைகிறோம். இந்த அறிமுகம் நமது வரலாறு, தலைமை மற்றும் முதல் நாளிலிருந்தே உங்களைப் பாதுகாக்கும் மனிதவளக் கொள்கைகளுக்கான வழிகாட்டியை வழங்குகிறது. ✦ </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lane 4: Malayalam -->
+      <div class="ticker-lane lane-malayalam">
+        <div class="lane-header">MALAYALAM · മലയാളം</div>
+        <div class="lane-marquee-wrapper">
+          <div class="marquee-track ltr-crawl">
+            <span class="marquee-text">ഫാൽക്കോറിലേക്ക് സ്വാഗതം. ഞങ്ങളുടെ ടീമിലേക്ക് നിങ്ങളെ സ്വാഗതം ചെയ്യുന്നതിൽ ഞങ്ങൾക്ക് അതിയായ സന്തോഷമുണ്ട്. ഈ ഓറിയന്റേഷൻ നമ്മുടെ ചരിത്രം, നേതൃത്വം, ആദ്യ ദിവസം മുതൽ നിങ്ങളെ പിന്തുണയ്ക്കുകയും സംരക്ഷിക്കുകയും ചെയ്യുന്ന നയങ്ങൾ എന്നിവയ്ക്കുള്ള വഴികാട്ടിയാണ്. ✦ </span>
+            <span class="marquee-text">ഫാൽക്കോറിലേക്ക് സ്വാഗതം. ഞങ്ങളുടെ ടീമിലേക്ക് നിങ്ങളെ സ്വാഗതം ചെയ്യുന്നതിൽ ഞങ്ങൾക്ക് അതിയായ സന്തോഷമുണ്ട്. ഈ ഓറിയന്റേഷൻ നമ്മുടെ ചരിത്രം, നേതൃത്വം, ആദ്യ ദിവസം മുതൽ നിങ്ങളെ പിന്തുണയ്ക്കുകയും സംരക്ഷിക്കുകയും ചെയ്യുന്ന നയങ്ങൾ എന്നിവയ്ക്കുള്ള വഴികാട്ടിയാണ്. ✦ </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
