@@ -2,6 +2,8 @@
 
 Comprehensive enterprise onboarding presentation, interactive teleprompter console, and synchronized 4-language broadcast video suite built for **Falcor Engineering & Contracting LLC, UAE**.
 
+> 📋 **Project Handover Guide**: For complete operational instructions, deliverables inventory, and developer guides, see [HANDOVER.md](file:///Users/shameel/Desktop/hr_induction/falcor-hr-induction/HANDOVER.md).
+
 ---
 
 ## 🌟 Key Features
@@ -57,8 +59,13 @@ hr induction/
 ├── clips/                               # Rendered 1080p MP4 clips per slide (clip_01.mp4 to clip_21.mp4)
 ├── assets/                              # Brand logos, icons, and client vectors
 │
-├── Falcor_HR_Orientation_Broadcast_Master.mp4  # Final concatenated 1080p broadcast video (~19 MB)
-└── Falcor_HR_Orientation_v10_2_Final - ppt_18.11.26.pptx # Source presentation deck
+├── Falcor_HR_Orientation_Broadcast_Master.mp4  # Final concatenated 1080p broadcast video (~19.6 MB)
+├── Falcor_HR_Orientation_Review_Deck.pdf       # 21-slide 1080p high-resolution review deck (~4.8 MB)
+├── Falcor_HR_Orientation_v10_2_Final - ppt_18.11.26.pptx # Source presentation deck
+├── HANDOVER.md                          # Comprehensive project handover & maintenance guide
+├── start_dev.sh                         # macOS/Linux one-click local server launcher
+├── start_dev.bat                        # Windows one-click local server launcher
+└── videos/slide_01_video.mp4            # Live broadcast sample video with subtitle blade
 ```
 
 ---

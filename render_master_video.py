@@ -6,7 +6,17 @@ Generates 1080p broadcast video synchronized to narration audio with high visual
 import os
 import json
 import subprocess
-import imageio_ffmpeg
+import shutil
+
+def get_ffmpeg_exe():
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except ImportError:
+        exe = shutil.which('ffmpeg')
+        if exe:
+            return exe
+        raise RuntimeError("FFmpeg executable not found. Install ffmpeg (e.g. brew install ffmpeg) or 'pip install imageio-ffmpeg'.")
 
 def get_base_dir():
     # Detect if run from inside 'hr induction' or from parent workspace
@@ -28,7 +38,7 @@ def main():
     with open(durations_path, 'r', encoding='utf-8') as f:
         durations = json.load(f)
         
-    ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
+    ffmpeg = get_ffmpeg_exe()
     print(f"Using FFmpeg: {ffmpeg}")
     print(f"Working Directory: {hr_dir}")
     

@@ -3,8 +3,8 @@ import os
 import time
 from playwright.sync_api import sync_playwright
 
-WORKSPACE = r"C:\Users\m.shameel\Downloads\it_induction_ppt\hr induction"
-SHOTS_DIR = r"C:\Users\m.shameel\.gemini\antigravity-cli\brain\75e0257b-7d41-4749-92fb-a5f17bbb9b78\scratch\rolling_narration_shots"
+WORKSPACE = os.path.dirname(os.path.abspath(__file__))
+SHOTS_DIR = os.path.join(WORKSPACE, "test_screenshots")
 os.makedirs(SHOTS_DIR, exist_ok=True)
 
 html_url = "file:///" + os.path.join(WORKSPACE, "index.html").replace("\\", "/")

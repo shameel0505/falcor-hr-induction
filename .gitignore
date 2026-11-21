@@ -21,6 +21,7 @@ Thumbs.db
 .vscode/
 
 # Temporary test scratch outputs
+test_screenshots/
 test_*.png
 test_slide12*
 test_audio*

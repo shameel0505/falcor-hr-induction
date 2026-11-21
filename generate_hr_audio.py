@@ -2,8 +2,18 @@ import asyncio
 import edge_tts
 import os
 import json
-import imageio_ffmpeg
+import shutil
 import subprocess
+
+def get_ffmpeg_exe():
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except ImportError:
+        exe = shutil.which('ffmpeg')
+        if exe:
+            return exe
+        raise RuntimeError("FFmpeg executable not found. Install ffmpeg or 'pip install imageio-ffmpeg'.")
 
 scripts = {
     1: "Welcome to Falkor. We are delighted to have you join our team. This orientation provides an essential guide to our history, our leadership, how we work, and the HR policies that support and protect you from your very first day.",
@@ -30,12 +40,13 @@ scripts = {
 }
 
 async def generate_all():
-    audio_dir = os.path.abspath(r"hr induction\audio")
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    audio_dir = os.path.join(base_dir, "audio")
     os.makedirs(audio_dir, exist_ok=True)
     voice = "en-US-JennyNeural"
     
     durations = {}
-    ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
+    ffmpeg = get_ffmpeg_exe()
     
     for num, text in scripts.items():
         out_file = os.path.join(audio_dir, f"slide_{num:02d}.mp3")
@@ -55,7 +66,8 @@ async def generate_all():
         durations[num] = round(dur, 2)
         print(f"Slide {num:02d} audio generated: {durations[num]}s -> {out_file}")
         
-    with open(r"hr induction\audio_durations.json", "w") as f:
+    durations_file = os.path.join(base_dir, "audio_durations.json")
+    with open(durations_file, "w") as f:
         json.dump(durations, f, indent=2)
     print(f"All 21 audio files generated successfully! Total duration: {sum(durations.values())/60:.2f} minutes")
 
